@@ -2,13 +2,28 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>DWH_Q1</Name>
-    <LastWriteTime>2026-04-11T07:54:48.4927435Z</LastWriteTime>
+    <LastWriteTime>2026-04-19T15:05:30.7475495Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2026-04-11T05:58:46.9382317Z</LastWriteTime>
+      <Name>Q2.dtsx</Name>
+      <LastWriteTime>2026-04-19T15:04:59.1020371Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Q3.dtsx</Name>
+      <LastWriteTime>2026-04-19T15:02:17.5072089Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Q4.dtsx</Name>
+      <LastWriteTime>2026-04-19T15:02:17.478898Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Q1.dtsx</Name>
+      <LastWriteTime>2026-04-19T15:05:30.7190209Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

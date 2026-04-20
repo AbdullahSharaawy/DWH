@@ -1,18 +1,18 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/10/2026 1:32:38 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="A_SHARAAWY"
   DTS:CreatorName="A_SHARAAWY\abdal"
-  DTS:DTSID="{F4512FD1-4D9A-49D6-BFF9-4B9F63CBFBF5}"
+  DTS:DTSID="{0096373C-3012-4361-A8AD-0352A58BAF9A}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="2057"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Q1"
   DTS:PackageType="5"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{310D50C6-9B91-44F0-8925-0C7515CC4920}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{6F4008DD-641D-47AA-AE39-AFB877D8DC38}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3599,26 +3599,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="361,211" />
-        <NodeLayout
-          Size="296,42"
-          Id="Package\Data Flow Task\Derived Column to handle source system (xsl)"
-          TopLeft="0,129" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Data Flow Task\Data Conversion 1"
-          TopLeft="106,208" />
-        <NodeLayout
-          Size="298,42"
-          Id="Package\Data Flow Task\Derived Column to handle source system (csv)"
-          TopLeft="316,129" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Task\Data Conversion 2"
-          TopLeft="587,209" />
-        <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="358,44" />
@@ -3626,6 +3606,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Size="134,42"
           Id="Package\Data Flow Task\XML Source"
           TopLeft="125,42" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="361,211" />
         <NodeLayout
           Size="297,42"
           Id="Package\Data Flow Task\Derived Column to handle source system (api)"
@@ -3639,6 +3623,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\Data Flow Task\Api data"
           TopLeft="584,42" />
         <NodeLayout
+          Size="165,42"
+          Id="Package\Data Flow Task\Data Conversion 1"
+          TopLeft="106,208" />
+        <NodeLayout
           Size="121,42"
           Id="Package\Data Flow Task\Union All"
           TopLeft="251,301" />
@@ -3646,278 +3634,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Size="224,42"
           Id="Package\Data Flow Task\filter data ( handle clear data )"
           TopLeft="323,386" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="311.5,343">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="123.5,43"
-              Start="0,0"
-              End="123.5,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
-                  <mssgle:LineSegment
-                    End="119.5,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="119.5,21.5"
-                    Point2="123.5,21.5"
-                    Point3="123.5,25.5" />
-                  <mssgle:LineSegment
-                    End="123.5,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Record]"
-          TopLeft="192,84">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-44,45"
-              Start="0,0"
-              End="-44,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="-4,22.5" />
-                  <mssgle:LineSegment
-                    End="-40,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-40,22.5"
-                    Point2="-44,22.5"
-                    Point3="-44,26.5" />
-                  <mssgle:LineSegment
-                    End="-44,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
-          TopLeft="643,84">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="124.5,38"
-              Start="0,0"
-              End="124.5,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
-                  <mssgle:LineSegment
-                    End="120.5,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="120.5,19"
-                    Point2="124.5,19"
-                    Point3="124.5,23" />
-                  <mssgle:LineSegment
-                    End="124.5,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="433.5,86">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="31.5,43"
-              Start="0,0"
-              End="31.5,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
-                  <mssgle:LineSegment
-                    End="27.5,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27.5,21.5"
-                    Point2="31.5,21.5"
-                    Point3="31.5,25.5" />
-                  <mssgle:LineSegment
-                    End="31.5,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output2]"
-          TopLeft="767.5,164">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-102.5,45"
-              Start="0,0"
-              End="-102.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="-4,22.5" />
-                  <mssgle:LineSegment
-                    End="-98.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-98.5,22.5"
-                    Point2="-102.5,22.5"
-                    Point3="-102.5,26.5" />
-                  <mssgle:LineSegment
-                    End="-102.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="465,171">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-26,40"
-              Start="0,0"
-              End="-26,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16"
-                    Point2="0,20"
-                    Point3="-4,20" />
-                  <mssgle:LineSegment
-                    End="-22,20" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22,20"
-                    Point2="-26,20"
-                    Point3="-26,24" />
-                  <mssgle:LineSegment
-                    End="-26,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="148,171">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="40.5,37"
-              Start="0,0"
-              End="40.5,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
-                  <mssgle:LineSegment
-                    End="36.5,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="36.5,18.5"
-                    Point2="40.5,18.5"
-                    Point3="40.5,22.5" />
-                  <mssgle:LineSegment
-                    End="40.5,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output2]"
-          TopLeft="665,251">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-325.25,50"
-              Start="0,0"
-              End="-325.25,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.6145552560647" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.6145552560647"
-                    Point2="0,32.6145552560647"
-                    Point3="-4,32.6145552560647" />
-                  <mssgle:LineSegment
-                    End="-321.25,32.6145552560647" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-321.25,32.6145552560647"
-                    Point2="-325.25,32.6145552560647"
-                    Point3="-325.25,36.6145552560647" />
-                  <mssgle:LineSegment
-                    End="-325.25,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion 2"
+          TopLeft="587,209" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\Derived Column 1"
+          TopLeft="352,462" />
+        <NodeLayout
+          Size="296,42"
+          Id="Package\Data Flow Task\Derived Column to handle source system (xsl)"
+          TopLeft="0,129" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="5.5,121.5" />
+        <NodeLayout
+          Size="298,42"
+          Id="Package\Data Flow Task\Derived Column to handle source system (csv)"
+          TopLeft="316,129" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
           TopLeft="188.5,250">
@@ -3949,7 +3685,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3983,17 +3721,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="5.5,121.5" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow Task\Derived Column 1"
-          TopLeft="352,462" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Conditional Split Default Output]"
           TopLeft="434.25,428">
@@ -4019,6 +3751,150 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="311.5,343">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.5,43"
+              Start="0,0"
+              End="123.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="119.5,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="119.5,21.5"
+                    Point2="123.5,21.5"
+                    Point3="123.5,25.5" />
+                  <mssgle:LineSegment
+                    End="123.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Record]"
+          TopLeft="192,84">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-44,45"
+              Start="0,0"
+              End="-44,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="-4,22.5" />
+                  <mssgle:LineSegment
+                    End="-40,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-40,22.5"
+                    Point2="-44,22.5"
+                    Point3="-44,26.5" />
+                  <mssgle:LineSegment
+                    End="-44,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
+          TopLeft="643,84">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.5,38"
+              Start="0,0"
+              End="124.5,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="120.5,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.5,19"
+                    Point2="124.5,19"
+                    Point3="124.5,23" />
+                  <mssgle:LineSegment
+                    End="124.5,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="433.5,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.5,43"
+              Start="0,0"
+              End="31.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="27.5,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5,21.5"
+                    Point2="31.5,21.5"
+                    Point3="31.5,25.5" />
+                  <mssgle:LineSegment
+                    End="31.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output3]"
           TopLeft="432,504">
           <EdgeLayout.Curve>
@@ -4037,7 +3913,153 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output2]"
+          TopLeft="767.5,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-102.5,45"
+              Start="0,0"
+              End="-102.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="-4,22.5" />
+                  <mssgle:LineSegment
+                    End="-98.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.5,22.5"
+                    Point2="-102.5,22.5"
+                    Point3="-102.5,26.5" />
+                  <mssgle:LineSegment
+                    End="-102.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="465,171">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26,40"
+              Start="0,0"
+              End="-26,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="-4,20" />
+                  <mssgle:LineSegment
+                    End="-22,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22,20"
+                    Point2="-26,20"
+                    Point3="-26,24" />
+                  <mssgle:LineSegment
+                    End="-26,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="148,171">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.5,37"
+              Start="0,0"
+              End="40.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="36.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.5,18.5"
+                    Point2="40.5,18.5"
+                    Point3="40.5,22.5" />
+                  <mssgle:LineSegment
+                    End="40.5,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output2]"
+          TopLeft="665,251">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-325.25,50"
+              Start="0,0"
+              End="-325.25,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6145552560647" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.6145552560647"
+                    Point2="0,32.6145552560647"
+                    Point3="-4,32.6145552560647" />
+                  <mssgle:LineSegment
+                    End="-321.25,32.6145552560647" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-321.25,32.6145552560647"
+                    Point2="-325.25,32.6145552560647"
+                    Point3="-325.25,36.6145552560647" />
+                  <mssgle:LineSegment
+                    End="-325.25,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

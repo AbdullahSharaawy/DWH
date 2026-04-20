@@ -1,38 +1,38 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/11/2026 7:59:19 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="A_SHARAAWY"
   DTS:CreatorName="A_SHARAAWY\abdal"
-  DTS:DTSID="{AFFC17E1-B69F-4D1B-A28C-EB3A87072D8C}"
+  DTS:DTSID="{B391447B-EE93-4632-9E3A-09D6D56E602E}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="2057"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Q3"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{26845C8F-DD53-481A-B9F6-2F51C7F885C0}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{D81C00BC-6C9A-4CDF-9E6F-30C929C0FCEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[A_SHARAAWY.DWH]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{906345D6-7F04-45BB-AB9C-EE0878C20D3E}"
+      DTS:DTSID="{99D8E635-B976-4317-96A7-5E165288A358}"
       DTS:ObjectName="A_SHARAAWY.DWH">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=A_SHARAAWY;Initial Catalog=DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{906345D6-7F04-45BB-AB9C-EE0878C20D3E}A_SHARAAWY.DWH;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=A_SHARAAWY;Initial Catalog=DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{99D8E635-B976-4317-96A7-5E165288A358}A_SHARAAWY.DWH;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C735B6F3-1E87-4F02-B133-00477C99780B}"
+      DTS:DTSID="{D429F696-2768-47A6-BC20-F07DE099D940}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="IsSameDayRun">
@@ -41,7 +41,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D869AD5E-1B4F-436B-BC3A-0EDF9811E70D}"
+      DTS:DTSID="{1461F51E-7AF1-452A-B878-B190C44FF552}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastLoadDate">
@@ -50,7 +50,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D871BF4E-B5B3-47CD-9223-D40E3EAAC90B}"
+      DTS:DTSID="{C221D902-043D-43BB-BFB2-DB0B4D95CA77}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="MaxVersion">
@@ -63,7 +63,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{E667F08D-374E-467F-89AE-953AE894BF2C}"
+      DTS:DTSID="{FFB9D41C-4813-47D2-B2F0-0295BC343310}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -672,16 +672,16 @@
       DTS:refId="Package\Get LastDate"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{13EE9E08-5A43-4D12-834B-40B6C23C326F}"
+      DTS:DTSID="{8F9604F8-4DA7-4CDC-AF5E-64C7F386BE9D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LastDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{906345D6-7F04-45BB-AB9C-EE0878C20D3E}"
+          SQLTask:Connection="{99D8E635-B976-4317-96A7-5E165288A358}"
           SQLTask:SqlStatementSource="SELECT CAST(ISNULL(MAX(Insert_Date), '1900-01-01') AS DATETIME) AS LastLoadDate&#xA;FROM Device_Target"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -694,16 +694,16 @@
       DTS:refId="Package\Get MaxVersion_NO"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{FE83C89F-4428-479F-86F9-75F8BAFF8856}"
+      DTS:DTSID="{014BA3DA-7D6A-41D2-B861-4AE26DA7718D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get MaxVersion_NO"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{906345D6-7F04-45BB-AB9C-EE0878C20D3E}"
+          SQLTask:Connection="{99D8E635-B976-4317-96A7-5E165288A358}"
           SQLTask:SqlStatementSource="SELECT &#xA; MAX(Version_No) AS MaxVersion&#xA;FROM Device_Target&#xA;WHERE Insert_Date = CAST(GETDATE() AS DATE);"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -716,7 +716,7 @@
       DTS:refId="Package\Set IsSameDay Insertion"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
-      DTS:DTSID="{757D4CCB-DF66-49A1-BF25-7792252286DE}"
+      DTS:DTSID="{149C4B4F-289C-423D-B6C0-D99224423F28}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set IsSameDay Insertion"
@@ -1381,7 +1381,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{631CC17A-6100-4D24-B8E4-517F8B860E64}"
+      DTS:DTSID="{CFA8CDA1-CA5B-44EA-8180-47A86FFE5C5D}"
       DTS:From="Package\Get LastDate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1389,7 +1389,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{5614CA17-7098-4BCD-A5A9-2F2D84F3EE2A}"
+      DTS:DTSID="{B92C2EC0-3BB0-458D-83F4-2B55FE7397ED}"
       DTS:From="Package\Set IsSameDay Insertion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1397,7 +1397,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{0CF3CFDC-8025-40D7-846C-5500C7623ACB}"
+      DTS:DTSID="{2FEE5D8A-0505-4D32-8365-9BD874591086}"
       DTS:From="Package\Get MaxVersion_NO"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"

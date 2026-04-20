@@ -5,34 +5,34 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="A_SHARAAWY"
   DTS:CreatorName="A_SHARAAWY\abdal"
-  DTS:DTSID="{8533EC04-D163-4926-BEAB-21850BE7EF43}"
+  DTS:DTSID="{9AFF946B-C440-40D8-B657-4087731D50FF}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="2057"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Q2"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{62C5B02E-2D74-45B1-991E-0D9ACFB93BF1}">
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{EE4877AA-46E7-406A-B384-15BF95937774}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[A_SHARAAWY.DWH]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{DD75CC35-D849-400A-B9BA-95DD6CA52960}"
+      DTS:DTSID="{CACFE91F-7F95-4972-B261-C318920C27B3}"
       DTS:ObjectName="A_SHARAAWY.DWH">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=A_SHARAAWY;Initial Catalog=DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{DD75CC35-D849-400A-B9BA-95DD6CA52960}A_SHARAAWY.DWH;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=A_SHARAAWY;Initial Catalog=DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{CACFE91F-7F95-4972-B261-C318920C27B3}A_SHARAAWY.DWH;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C1D453C4-1EDD-4691-BF9B-237DC2C55288}"
+      DTS:DTSID="{91C934BA-238E-484C-8607-CF0D89C3851D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CurrentLoadDate">
@@ -41,7 +41,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6B9C71C1-FEF6-4FC6-A14B-21605FAA11D7}"
+      DTS:DTSID="{FA247BD2-F5D4-472E-BCD0-EC58FB74D550}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastLoadDate">
@@ -50,7 +50,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{226135C7-6CCE-448D-9D33-5FD882215D6E}"
+      DTS:DTSID="{B257A657-3DF7-415B-87C3-BB088E3DDB37}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PackagePath">
@@ -63,7 +63,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{BEF16AF0-6FE1-4BC2-AA38-A393F54FB3F6}"
+      DTS:DTSID="{F0A0B857-193F-4ABB-BC0D-9B644FEDFE85}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -582,10 +582,10 @@ WHERE  ID = ?;
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\get only updated data.Outputs[Conditional Split Default Output]"
+                  refId="Package\Data Flow Task\get only updated data.Outputs[deleted path]"
                   description="Default Output of the Conditional Split Transformation"
                   exclusionGroup="1"
-                  name="Conditional Split Default Output"
+                  name="deleted path"
                   synchronousInputId="Package\Data Flow Task\get only updated data.Inputs[Conditional Split Input]">
                   <properties>
                     <property
@@ -1810,7 +1810,7 @@ where [refTable].[ID] = ?</property>
       DTS:refId="Package\read last load date"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
-      DTS:DTSID="{8B93E180-0EB7-46A5-88DE-66F3B8DF847E}"
+      DTS:DTSID="{91A6D6A6-AD63-4B42-906C-7617190F1C5F}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="read last load date"
@@ -2473,7 +2473,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:refId="Package\set last load date to config file"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
-      DTS:DTSID="{72F6EEB1-800E-4DBF-B2EB-759174F7BA52}"
+      DTS:DTSID="{6B03619C-FB82-4EE5-8856-4E040FA2A690}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="set last load date to config file"
@@ -3158,7 +3158,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       DTS:refId="Package\update last load date"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0406C102-2AF1-4C8F-8B2B-E08F95B5EEDC}"
+      DTS:DTSID="{302C27F1-6177-4A40-8170-75089F1F1786}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="update last load date"
@@ -3167,8 +3167,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{DD75CC35-D849-400A-B9BA-95DD6CA52960}"
-          SQLTask:SqlStatementSource="SELECT MAX(Update_Date) AS LastLoadDate&#xA;FROM Campaign_SCD6&#xA;"
+          SQLTask:Connection="{CACFE91F-7F95-4972-B261-C318920C27B3}"
+          SQLTask:SqlStatementSource="SELECT MAX(Start_Date) AS LastLoadDate&#xA;FROM Campaign_SCD6&#xA;"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="LastLoadDate"
@@ -3181,7 +3181,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{0C8327BD-BA12-49F3-9874-77BA41EE9DEC}"
+      DTS:DTSID="{9FA72424-80C2-4FA9-8793-F2CC33F4BFCF}"
       DTS:From="Package\read last load date"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3189,7 +3189,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{3C7C72F0-5773-46DD-AEEC-D4DF735C2A28}"
+      DTS:DTSID="{EEC9EFC1-DC3F-48CF-B1B3-54A9F252C534}"
       DTS:From="Package\Data Flow Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3197,7 +3197,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{55B01E4B-1191-4636-B204-1274E28DEEB0}"
+      DTS:DTSID="{28A304E1-84F2-4952-8558-102923E24F2B}"
       DTS:From="Package\update last load date"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3318,80 +3318,52 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="277,42"
-          Id="Package\Data Flow Task\inner join between source and destination"
-          TopLeft="260,209" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Data Flow Task\OLE DB Destination 1"
-          TopLeft="521,459" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="285.5,35.5" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="316,606" />
-        <NodeLayout
           Size="253,42"
           Id="Package\Data Flow Task\prepare new record to insert it direct"
-          TopLeft="484,312" />
-        <NodeLayout
-          Size="323,42"
-          Id="Package\Data Flow Task\prepare new record with previous and new changes"
-          TopLeft="73,378" />
-        <NodeLayout
-          Size="377,42"
-          Id="Package\Data Flow Task\disapled active before insert new changes as new record active"
-          TopLeft="237,541" />
+          TopLeft="656,312" />
         <NodeLayout
           Size="124,42"
           Id="Package\Data Flow Task\filter data"
-          TopLeft="315,301" />
+          TopLeft="487,301" />
         <NodeLayout
           Size="183,42"
           Id="Package\Data Flow Task\get only updated data"
-          TopLeft="268,117" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[updated data]"
-          TopLeft="377,343">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-142.5,35"
-              Start="0,0"
-              End="-142.5,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="-4,17.5" />
-                  <mssgle:LineSegment
-                    End="-138.5,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-138.5,17.5"
-                    Point2="-142.5,17.5"
-                    Point3="-142.5,21.5" />
-                  <mssgle:LineSegment
-                    End="-142.5,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-100.88451171875,22.5,59.2690234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="440,117" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="457.5,35.5" />
+        <NodeLayout
+          Size="323,42"
+          Id="Package\Data Flow Task\prepare new record with previous and new changes"
+          TopLeft="245,378" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion 1"
+          TopLeft="706,391" />
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Data Flow Task\inner join between source and destination"
+          TopLeft="432,209" />
+        <NodeLayout
+          Size="377,42"
+          Id="Package\Data Flow Task\disapled active before insert new changes as new record active"
+          TopLeft="409,541" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="488,606" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="374,456" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Data Flow Task\OLE DB Destination 1"
+          TopLeft="693,459" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Updated Data]"
-          TopLeft="359.5,159">
+          TopLeft="531.5,159">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3427,7 +3399,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="360,77.5">
+          TopLeft="532,77.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3449,7 +3421,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="425.5,583">
+          TopLeft="597.5,583">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3483,7 +3455,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="443.333333333333,251">
+          TopLeft="615.333333333333,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3519,7 +3491,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="398.5,251">
+          TopLeft="570.5,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3553,13 +3525,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="202,456" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="783.25,354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="234.5,420">
+          TopLeft="406.5,420">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3592,8 +3582,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
+          TopLeft="783.5,433">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="280,498">
+          TopLeft="452,498">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3625,64 +3637,65 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Task\Data Conversion 1"
-          TopLeft="534,391" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="611.25,354">
+          Id="Package\Data Flow Task.Paths[updated data]"
+          TopLeft="549,343">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37"
+              EndConnector="-142.5,35"
               Start="0,0"
-              End="0,29.5">
+              End="-142.5,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
+                  <mssgle:LineSegment
+                    End="-138.5,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-138.5,17.5"
+                    Point2="-142.5,17.5"
+                    Point3="-142.5,21.5" />
+                  <mssgle:LineSegment
+                    End="-142.5,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
-          TopLeft="611.5,433">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26"
-              Start="0,0"
-              End="0,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-100.88451171875,22.5,59.2690234375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\inner join between source and destination">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3700,33 +3713,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

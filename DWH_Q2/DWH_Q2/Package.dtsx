@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{5F6AD6D7-F9A7-4D47-9803-D98969C55F6D}">
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{1316A814-6AFE-4E64-BF13-1643077E6E38}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -55,7 +55,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="PackagePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Users\abdal\Desktop\DWH_Assig\DWH_Q2\DWH_Q2</DTS:VariableValue>
+        DTS:DataType="8">C:\SSIS_Output\</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -73,6 +73,162 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow Task\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[CurrentName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CurrentName"
+                      lineageId="Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output].Columns[CurrentName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[CurrentName_Normalized]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[CurrentName_Normalized]"
+                      name="CurrentName_Normalized"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output].Columns[CurrentName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Data Conversion 1"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Conversion 1.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion 1.Inputs[Data Conversion Input].Columns[CurrentName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CurrentName"
+                      lineageId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output].Columns[CurrentName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Output].Columns[CurrentName_Normalized]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Output].Columns[CurrentName_Normalized]"
+                      name="CurrentName_Normalized"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output].Columns[CurrentName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow Task\disapled active before insert new changes as new record active"
               componentClassID="Microsoft.OLEDBCommand"
@@ -93,13 +249,22 @@
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Campaign_SCD6
 SET    Is_Active = 0,
-       End_Date   = DATEADD(DAY, -1, ?)
+       End_Date   = DATEADD(DAY, -1, ?),
+       Previous_Name=Name,
+       Previous_Budget=Budget
 WHERE  Surrogate_Key = ?
-AND   Is_Active = 1</property>
+AND   Is_Active = 1;
+
+UPDATE Campaign_SCD6
+SET    
+       Name=?,
+      Budget=?
+WHERE  ID = ?;
+</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
+                  name="DefaultCodePage">1256</property>
               </properties>
               <connections>
                 <connection
@@ -123,6 +288,28 @@ AND   Is_Active = 1</property>
                       cachedName="Update_Date"
                       externalMetadataColumnId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Update_Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].Columns[Name]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].Columns[Budget]"
+                      cachedDataType="numeric"
+                      cachedName="Budget"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Budget]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].Columns[ID]"
+                      cachedDataType="i4"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]" />
                     <inputColumn
                       refId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].Columns[Surrogate_Key]"
                       cachedDataType="i4"
@@ -152,6 +339,43 @@ AND   Is_Active = 1</property>
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
                           name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="numeric"
+                      name="Param_3"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -358,10 +582,10 @@ AND   Is_Active = 1</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\get only updated data.Outputs[Conditional Split Default Output]"
+                  refId="Package\Data Flow Task\get only updated data.Outputs[deleted path]"
                   description="Default Output of the Conditional Split Transformation"
                   exclusionGroup="1"
-                  name="Conditional Split Default Output"
+                  name="deleted path"
                   synchronousInputId="Package\Data Flow Task\get only updated data.Inputs[Conditional Split Input]">
                   <properties>
                     <property
@@ -449,7 +673,7 @@ where [refTable].[ID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="Budget" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Previous_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="Previous_Budget" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Start_Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="End_Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Is_Active" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Update_Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Surrogate_Key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="Budget" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Previous_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1256"/&gt;&lt;referenceColumn name="Previous_Budget" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Start_Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="End_Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Is_Active" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Surrogate_Key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -695,36 +919,14 @@ where [refTable].[ID] = ?</property>
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Budget]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Budget]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Previous_Name]"
-                      cachedCodepage="1256"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Previous_Name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Previous_Name]"
-                      lineageId="Package\Data Flow Task\inner join between source and destination.Outputs[Lookup Match Output].Columns[Previous_Name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Previous_Budget]"
-                      cachedDataType="numeric"
-                      cachedName="Previous_Budget"
-                      cachedPrecision="10"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Previous_Budget]"
-                      lineageId="Package\Data Flow Task\inner join between source and destination.Outputs[Lookup Match Output].Columns[Previous_Budget]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Is_Active]"
                       cachedDataType="ui1"
                       cachedName="Is_Active"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Is_Active]"
                       lineageId="Package\Data Flow Task\inner join between source and destination.Outputs[Lookup Match Output].Columns[Is_Active]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Update_Date]"
-                      cachedDataType="dbDate"
-                      cachedName="Update_Date"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Update_Date]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Update_Date]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Start_Date]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbDate"
                       cachedName="Start_Date"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Start_Date]"
                       lineageId="Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output].Columns[Start_Date]" />
@@ -734,6 +936,22 @@ where [refTable].[ID] = ?</property>
                       cachedName="End_Date"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[End_Date]"
                       lineageId="Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output].Columns[End_Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrentBudget]"
+                      cachedDataType="numeric"
+                      cachedName="CurrentBudget"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Previous_Budget]"
+                      lineageId="Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output].Columns[CurrentBudget]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrentName_Normalized]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CurrentName_Normalized"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Previous_Name]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[CurrentName_Normalized]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -767,20 +985,16 @@ where [refTable].[ID] = ?</property>
                       scale="2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Start_Date]"
-                      dataType="dbTimeStamp"
+                      dataType="dbDate"
                       name="Start_Date" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[End_Date]"
-                      dataType="dbTimeStamp"
+                      dataType="dbDate"
                       name="End_Date" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Is_Active]"
                       dataType="ui1"
                       name="Is_Active" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Update_Date]"
-                      dataType="dbTimeStamp"
-                      name="Update_Date" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Surrogate_Key]"
                       dataType="i4"
@@ -908,14 +1122,8 @@ where [refTable].[ID] = ?</property>
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Budget]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Budget]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Update_Date]"
-                      cachedDataType="dbDate"
-                      cachedName="Update_Date"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Update_Date]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Update_Date]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Start_Date]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbDate"
                       cachedName="Start_Date"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Start_Date]"
                       lineageId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output].Columns[Start_Date]" />
@@ -931,6 +1139,22 @@ where [refTable].[ID] = ?</property>
                       cachedName="Is_Active"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Is_Active]"
                       lineageId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output].Columns[Is_Active]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[CurrentBudget]"
+                      cachedDataType="numeric"
+                      cachedName="CurrentBudget"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Previous_Budget]"
+                      lineageId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output].Columns[CurrentBudget]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[CurrentName_Normalized]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CurrentName_Normalized"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Previous_Name]"
+                      lineageId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Output].Columns[CurrentName_Normalized]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -964,20 +1188,16 @@ where [refTable].[ID] = ?</property>
                       scale="2" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Start_Date]"
-                      dataType="dbTimeStamp"
+                      dataType="dbDate"
                       name="Start_Date" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[End_Date]"
-                      dataType="dbTimeStamp"
+                      dataType="dbDate"
                       name="End_Date" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Is_Active]"
                       dataType="ui1"
                       name="Is_Active" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Update_Date]"
-                      dataType="dbTimeStamp"
-                      name="Update_Date" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Surrogate_Key]"
                       dataType="i4"
@@ -1200,6 +1420,20 @@ where [refTable].[ID] = ?</property>
                       cachedDataType="dbDate"
                       cachedName="Update_Date"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Update_Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\prepare new record to insert it direct.Inputs[Derived Column Input].Columns[Name]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\prepare new record to insert it direct.Inputs[Derived Column Input].Columns[Budget]"
+                      cachedDataType="numeric"
+                      cachedName="Budget"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Budget]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1278,6 +1512,53 @@ where [refTable].[ID] = ?</property>
                           name="FriendlyExpression">1</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output].Columns[CurrentName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output].Columns[CurrentName]"
+                      name="CurrentName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Name</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output].Columns[CurrentBudget]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output].Columns[CurrentBudget]"
+                      name="CurrentBudget"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Budget]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Budget</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1324,6 +1605,20 @@ where [refTable].[ID] = ?</property>
                       cachedDataType="dbDate"
                       cachedName="Update_Date"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Update_Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\prepare new record with previous and new changes.Inputs[Derived Column Input].Columns[Name]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\prepare new record with previous and new changes.Inputs[Derived Column Input].Columns[Budget]"
+                      cachedDataType="numeric"
+                      cachedName="Budget"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Budget]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1380,6 +1675,53 @@ where [refTable].[ID] = ?</property>
                           name="FriendlyExpression">NULL(DT_DBDATE)</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output].Columns[CurrentName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output].Columns[CurrentName]"
+                      name="CurrentName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Name</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output].Columns[CurrentBudget]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output].Columns[CurrentBudget]"
+                      name="CurrentBudget"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Budget]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Budget</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1411,15 +1753,25 @@ where [refTable].[ID] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
               endId="Package\Data Flow Task\disapled active before insert new changes as new record active.Inputs[OLE DB Command Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output1]"
+              endId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\prepare new record with previous and new changes.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\prepare new record to insert it direct.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup Match Output]"
               endId="Package\Data Flow Task\filter data.Inputs[Conditional Split Input]"
@@ -1775,6 +2127,26 @@ namespace ST_393c300595724c9792c2f5549b9bc663
 	}
 }]]></ProjectItem>
           <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_393c300595724c9792c2f5549b9bc663</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_393c300595724c9792c2f5549b9bc663</msb:DisplayName>
+    <msb:ProjectId>{E147950D-DF73-40F2-AEB6-E7EF55023D5C}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_393c300595724c9792c2f5549b9bc663.csproj" />
+    <msb:File Include="ScriptMain.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
             Name="ST_393c300595724c9792c2f5549b9bc663.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -1860,26 +2232,6 @@ namespace ST_393c300595724c9792c2f5549b9bc663
     </VisualStudio>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
-          <ProjectItem
-            Name="Project"
-            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_393c300595724c9792c2f5549b9bc663</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_393c300595724c9792c2f5549b9bc663</msb:DisplayName>
-    <msb:ProjectId>{E147950D-DF73-40F2-AEB6-E7EF55023D5C}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_393c300595724c9792c2f5549b9bc663.csproj" />
-    <msb:File Include="ScriptMain.cs" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
           <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -2968,112 +3320,50 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="253,42"
           Id="Package\Data Flow Task\prepare new record to insert it direct"
-          TopLeft="485,298" />
+          TopLeft="656,312" />
         <NodeLayout
           Size="124,42"
           Id="Package\Data Flow Task\filter data"
-          TopLeft="315,301" />
+          TopLeft="487,301" />
         <NodeLayout
           Size="183,42"
           Id="Package\Data Flow Task\get only updated data"
-          TopLeft="268,117" />
-        <NodeLayout
-          Size="277,42"
-          Id="Package\Data Flow Task\inner join between source and destination"
-          TopLeft="260,209" />
+          TopLeft="440,117" />
         <NodeLayout
           Size="150,42"
           Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="285.5,35.5" />
-        <NodeLayout
-          Size="180,56"
-          Id="Package\Data Flow Task\OLE DB Destination 1"
-          TopLeft="491,368" />
-        <NodeLayout
-          Size="377,42"
-          Id="Package\Data Flow Task\disapled active before insert new changes as new record active"
-          TopLeft="245,473" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="287,538" />
+          TopLeft="457.5,35.5" />
         <NodeLayout
           Size="323,42"
           Id="Package\Data Flow Task\prepare new record with previous and new changes"
-          TopLeft="73,378" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="611.5,340">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-30.5,28"
-              Start="0,0"
-              End="-30.5,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="-4,14" />
-                  <mssgle:LineSegment
-                    End="-26.5,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-26.5,14"
-                    Point2="-30.5,14"
-                    Point3="-30.5,18" />
-                  <mssgle:LineSegment
-                    End="-30.5,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[updated data]"
-          TopLeft="377,343">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-142.5,35"
-              Start="0,0"
-              End="-142.5,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="-4,17.5" />
-                  <mssgle:LineSegment
-                    End="-138.5,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-138.5,17.5"
-                    Point2="-142.5,17.5"
-                    Point3="-142.5,21.5" />
-                  <mssgle:LineSegment
-                    End="-142.5,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-109.69701171875,22.5,76.8940234375,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="245,378" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion 1"
+          TopLeft="706,391" />
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Data Flow Task\inner join between source and destination"
+          TopLeft="432,209" />
+        <NodeLayout
+          Size="377,42"
+          Id="Package\Data Flow Task\disapled active before insert new changes as new record active"
+          TopLeft="409,541" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="488,606" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="374,456" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Data Flow Task\OLE DB Destination 1"
+          TopLeft="693,459" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Updated Data]"
-          TopLeft="359.5,159">
+          TopLeft="531.5,159">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3103,13 +3393,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-20.06201171875,30,79.1240234375,16"
+              BoundingBox="-11.2373046875,30,61.474609375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="360,77.5">
+          TopLeft="532,77.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3131,13 +3421,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="433.5,515">
+          TopLeft="597.5,583">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-61,23"
+              EndConnector="-24,23"
               Start="0,0"
-              End="-61,15.5">
+              End="-24,15.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3148,13 +3438,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                     Point2="0,11.5"
                     Point3="-4,11.5" />
                   <mssgle:LineSegment
-                    End="-57,11.5" />
+                    End="-20,11.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-57,11.5"
-                    Point2="-61,11.5"
-                    Point3="-61,15.5" />
+                    Point1="-20,11.5"
+                    Point2="-24,11.5"
+                    Point3="-24,15.5" />
                   <mssgle:LineSegment
-                    End="-61,15.5" />
+                    End="-24,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3165,43 +3455,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="443.333333333333,251">
+          TopLeft="615.333333333333,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="168.166666666667,47"
+              EndConnector="167.166666666667,61"
               Start="0,0"
-              End="168.166666666667,39.5">
+              End="167.166666666667,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.9619526202441" />
+                    End="0,20.6101938262742" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.9619526202441"
-                    Point2="0,18.9619526202441"
-                    Point3="4,18.9619526202441" />
+                    Point1="0,20.6101938262742"
+                    Point2="0,24.6101938262742"
+                    Point3="4,24.6101938262742" />
                   <mssgle:LineSegment
-                    End="164.166666666667,18.9619526202441" />
+                    End="163.166666666667,24.6101938262742" />
                   <mssgle:CubicBezierSegment
-                    Point1="164.166666666667,18.9619526202441"
-                    Point2="168.166666666667,18.9619526202441"
-                    Point3="168.166666666667,22.9619526202441" />
+                    Point1="163.166666666667,24.6101938262742"
+                    Point2="167.166666666667,24.6101938262742"
+                    Point3="167.166666666667,28.6101938262742" />
                   <mssgle:LineSegment
-                    End="168.166666666667,39.5" />
+                    End="167.166666666667,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.2769466145833,23.9619526202441,111.6127734375,11.609375"
+              BoundingBox="27.7769466145833,29.6101938262742,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="398.5,251">
+          TopLeft="570.5,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3231,36 +3521,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-67.8100390625,30,114.120078125,16"
+              BoundingBox="-58.94138671875,30,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="234.5,420">
+          TopLeft="783.25,354">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="199,53"
+              EndConnector="0,37"
               Start="0,0"
-              End="199,45.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="4,26.5" />
-                  <mssgle:LineSegment
-                    End="195,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="195,26.5"
-                    Point2="199,26.5"
-                    Point3="199,30.5" />
-                  <mssgle:LineSegment
-                    End="199,45.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3269,32 +3547,135 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="406.5,420">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.5,36"
+              Start="0,0"
+              End="45.5,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="41.5,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.5,18"
+                    Point2="45.5,18"
+                    Point3="45.5,22" />
+                  <mssgle:LineSegment
+                    End="45.5,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
+          TopLeft="783.5,433">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="452,498">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="145.5,43"
+              Start="0,0"
+              End="145.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="141.5,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="141.5,21.5"
+                    Point2="145.5,21.5"
+                    Point3="145.5,25.5" />
+                  <mssgle:LineSegment
+                    End="145.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[updated data]"
+          TopLeft="549,343">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-142.5,35"
+              Start="0,0"
+              End="-142.5,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
+                  <mssgle:LineSegment
+                    End="-138.5,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-138.5,17.5"
+                    Point2="-142.5,17.5"
+                    Point3="-142.5,21.5" />
+                  <mssgle:LineSegment
+                    End="-142.5,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-100.88451171875,22.5,59.2690234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\inner join between source and destination">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
@@ -3309,7 +3690,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination 1">
+    design-time-name="Package\Data Flow Task\inner join between source and destination">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3322,7 +3726,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
